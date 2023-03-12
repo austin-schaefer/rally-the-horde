@@ -30,27 +30,26 @@ print("Initial hand:", hand)
 print("Initial deck:", deck)
 print("\n")
 
-# Cast Rally the Horde
-end_the_rally = False
-warriors = 0
-while len(deck) >= 3:
-    while end_the_rally == False:
-        # Test if first card is spell
-        if deck[0] == "S":
-            warriors += 1
-        deck.pop(0)
-        # Test if second card is spell
-        if deck[0] == "S":
-            warriors += 1
-        deck.pop(0)
-        if deck[0] == "S":
-            warriors += 1
-        if deck[0] == "L":
-            end_the_rally = True
-        deck.pop(0)
-        print("Current deck:", deck)
-        print("  End the rally:", end_the_rally)
-        print("  Warrior count:", warriors)
-        print("  Cards left in deck:", len(deck))
 
-print(warriors)
+# Tests top card of deck to see if it's a spell
+warriors = 0
+end_the_rally = False
+def rally_test():
+    global warriors
+    if deck[0] == "S":
+        warriors += 1
+    deck.pop(0)
+
+# Cast Rally the Horde
+while end_the_rally == False:
+    # Test if first card is spell
+    rally_test()
+    rally_test()
+    if deck[0] == "L":
+        end_the_rally = True
+    rally_test()
+    print("Current deck:", deck)
+    print("  Warrior count:", warriors)
+    print("  Cards left in deck:", len(deck))
+    # if len(deck) <= 3:
+    #     game_over = True
