@@ -1,4 +1,5 @@
 import random
+output_file = open("output.csv", "a")
 
 test_for_rally_the_horde = False
 
@@ -35,9 +36,9 @@ if test_for_rally_the_horde == True:
         deck.pop(0)
 
 # Debugging output
-print("Initial hand:", hand)
-print("Initial deck:", deck)
-print("\n")
+#print("Initial hand:", hand)
+#print("Initial deck:", deck)
+#print("\n")
 
 # variables for rally the horde functions
 warriors = 0
@@ -71,6 +72,12 @@ while end_the_rally == False:
     #print("  Warrior count:", warriors)
     #print("  Cards left in deck:", len(deck))
 
-print("Final warrior count:", warriors)
-print("Final deck count:", len(deck))
-print("Did we deck ourselves:", decked_ourselves)
+#print("Final warrior count:", warriors)
+#print("Final deck count:", len(deck))
+#print("Did we deck ourselves:", decked_ourselves)
+# print(warriors, len(deck), decked_ourselves, sep=",")
+
+# Output results
+results = ''.join([str(warriors),",", str(len(deck)),",", str(decked_ourselves)])
+print(results)
+output_file.write(results)
