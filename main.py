@@ -1,19 +1,19 @@
 import random
 
 # settings
-output_file = open("output.csv", "a")
 test_for_rally_the_horde = True
-completed_iterations = 0
-target_iterations = 10000
+target_iterations = 20000
 
-# Add headers to CSV
+# Name output file and add headers
+output_file = open("output.csv", "a")
 output_file.write("warriors,deck_count,did_we_deck_ourselves\n")
 
 # Function for counting
 def count(iteratble):
     return sum(1 for _ in iterable)
 
-# the logic
+# main loop
+completed_iterations = 0
 while completed_iterations < target_iterations:
     # Create the deck (with Rally the Horde)
     deck = []
