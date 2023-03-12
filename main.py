@@ -54,9 +54,9 @@ while end_the_rally == False:
             end_the_rally = True
         rally_test()
     # Print some debug stuff
-    print("Current deck:", deck)
-    print("  Warrior count:", warriors)
-    print("  Cards left in deck:", len(deck))
+    #print("Current deck:", deck)
+    #print("  Warrior count:", warriors)
+    #print("  Cards left in deck:", len(deck))
 
 print("Final warrior count:", warriors)
 print("Final deck count:", len(deck))
