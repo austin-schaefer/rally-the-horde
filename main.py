@@ -2,9 +2,10 @@ import random
 
 # settings
 output_file = open("output.csv", "a")
-test_for_rally_the_horde = False
+output_file.write("warriors,deck_count,did_we_deck_ourselves\n")
+test_for_rally_the_horde = True
 completed_iterations = 0
-target_iterations = 5
+target_iterations = 10000
 
 # Function for counting
 def count(iteratble):
@@ -40,11 +41,6 @@ while completed_iterations < target_iterations:
             hand.append(deck[0])
             deck.pop(0)
 
-    # Debugging output
-    #print("Initial hand:", hand)
-    #print("Initial deck:", deck)
-    #print("\n")
-
     # variables for rally the horde functions
     warriors = 0
     end_the_rally = False
@@ -72,19 +68,9 @@ while completed_iterations < target_iterations:
             if deck[0] == "Land":
                 end_the_rally = True
             rally_test()
-        # Print some debug stuff
-        #print("Current deck:", deck)
-        #print("  Warrior count:", warriors)
-        #print("  Cards left in deck:", len(deck))
-
-    #print("Final warrior count:", warriors)
-    #print("Final deck count:", len(deck))
-    #print("Did we deck ourselves:", decked_ourselves)
-    # print(warriors, len(deck), decked_ourselves, sep=",")
 
     # Output results
     results = ''.join([str(warriors),",", str(len(deck)),",", str(decked_ourselves),"\n"])
-    print(results)
     output_file.write(results)
     
     completed_iterations += 1
