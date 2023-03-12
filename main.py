@@ -4,7 +4,7 @@ import random
 output_file = open("output.csv", "a")
 test_for_rally_the_horde = False
 completed_iterations = 0
-target_iterations = 100
+target_iterations = 5
 
 # Function for counting
 def count(iteratble):
@@ -83,7 +83,7 @@ while completed_iterations < target_iterations:
     # print(warriors, len(deck), decked_ourselves, sep=",")
 
     # Output results
-    results = ''.join([str(warriors),",", str(len(deck)),",", str(decked_ourselves)])
+    results = ''.join([str(warriors),",", str(len(deck)),",", str(decked_ourselves),"\n"])
     print(results)
     output_file.write(results)
     
