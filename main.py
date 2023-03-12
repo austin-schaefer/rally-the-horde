@@ -2,10 +2,12 @@ import random
 
 # settings
 output_file = open("output.csv", "a")
-output_file.write("warriors,deck_count,did_we_deck_ourselves\n")
 test_for_rally_the_horde = True
 completed_iterations = 0
 target_iterations = 10000
+
+# Add headers to CSV
+output_file.write("warriors,deck_count,did_we_deck_ourselves\n")
 
 # Function for counting
 def count(iteratble):
