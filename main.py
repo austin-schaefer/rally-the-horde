@@ -8,8 +8,9 @@ def count(iteratble):
 deck = []
 for _ in range(17):
     deck.append("L")
-for _ in range(23):
+for _ in range(22):
     deck.append("S")
+deck.append("R")
 random.shuffle(deck)
 
 # Draw cards into "hand" until it has 7 lands
@@ -19,6 +20,11 @@ while lands < 7:
     hand.append(deck[0])
     if deck[0] == "L":
         lands += 1
+    deck.pop(0)
+
+# If Rally the Horde isn't in our hand, draw until it is
+while "R" not in hand:
+    hand.append(deck[0])
     deck.pop(0)
 
 # Debugging output
