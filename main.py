@@ -24,10 +24,10 @@ while completed_iterations < target_iterations:
             deck.append("Spell")
     random.shuffle(deck)
 
-    # Draw cards into "hand" until it has 7 lands
+    # Draw cards into "hand" until it has 6 lands
     hand=[]
     lands = 0
-    while lands < 7:
+    while lands < 6:
         hand.append(deck[0])
         if deck[0] == "Land":
             lands += 1
