@@ -6,7 +6,7 @@ target_iterations = 20000
 
 # Name output file and add headers
 output_file = open("output.csv", "a")
-output_file.write("Game ID,Warriors generated,Cards left in deck,Did we deck ourselves\n")
+output_file.write("Require drawing RtH,Game ID,Warriors generated,Cards left in deck,Did we deck ourselves\n")
 
 # main loop
 completed_iterations = 0
@@ -68,7 +68,7 @@ while completed_iterations < target_iterations:
             rally_test()
 
     # Output results
-    results = ''.join([str(completed_iterations),",",str(warriors),",", str(len(deck)),",", str(decked_ourselves),"\n"])
+    results = ''.join([str(test_for_rally_the_horde),",",str(completed_iterations),",",str(warriors),",", str(len(deck)),",", str(decked_ourselves),"\n"])
     output_file.write(results)
     
     completed_iterations += 1
